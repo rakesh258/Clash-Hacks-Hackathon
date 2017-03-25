@@ -7,7 +7,8 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-import com.dipakkr.github.clashhackproject.Employee.EmployeeRegistration;
+import com.dipakkr.github.clashhackproject.Employee.EmployeeLogin;
+import com.dipakkr.github.clashhackproject.Employee.EmployeeSignup;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         bt_admin = (Button)findViewById(R.id.bt_admin);
-        bt_user = (Button)findViewById(R.id.bt_user);
+        bt_user = (Button)findViewById(R.id.bt_employer);
 
         bt_user.setOnClickListener(this);
         bt_admin.setOnClickListener(this);
@@ -30,10 +31,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (id){
             case R.id.bt_admin :
-                startActivity(new Intent(getApplicationContext(), EmployeeRegistration.class));
+                startActivity(new Intent(getApplicationContext(), EmployeeLogin.class));
                 break;
 
-            case R.id.bt_user :
+            case R.id.bt_employer :
+                startActivity(new Intent(getApplicationContext(), EmployeeSignup.class));
                 //break;
 
         }
