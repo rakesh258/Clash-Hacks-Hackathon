@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.dipakkr.github.clashhackproject.R;
 import com.dipakkr.github.clashhackproject.employer.model.Employer;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -23,6 +24,7 @@ public class EmployerPreProfileUpdate extends AppCompatActivity {
     private FirebaseDatabase mdatabase;
     private FirebaseAuth mAuth;
     private DatabaseReference mRef;
+    private FirebaseUser mUser;
 
     EditText et_name, et_intro, et_city, et_mobile, et_skill;
     Button bt_upload;
@@ -31,8 +33,12 @@ public class EmployerPreProfileUpdate extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employer_pre_update);
 
+
         mdatabase = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
+
+
         mRef = mdatabase.getReference().child("employer");
 
         et_name = (EditText)findViewById(R.id.employer_name);
@@ -55,7 +61,7 @@ public class EmployerPreProfileUpdate extends AppCompatActivity {
         String employer_intro = et_intro.getText().toString();
         String employer_city = et_city.getText().toString();
         String employer_mobile = et_mobile.getText().toString();
-        String employer_email = "";
+        String employer_email = mUser.getEmail();
         String employer_skill = et_skill.getText().toString();
 
         Employer employer = new Employer(employer_name,employer_intro,employer_city,employer_mobile,employer_email, employer_skill);
