@@ -20,8 +20,13 @@
         </activity>
         <activity android:name=".Employee.EmployeeRegistration"/>
         <activity android:name=".employer.EmployerRegistration"/>
+
         <activity android:name=".Employee.EmployeePreUpdateProfile"/>
         <activity android:name=".employer.EmployerPreProfileUpdate"/>
+
+        <activity android:name=".Employee.EmployeeLogin" android:theme="@style/AppTheme.Dark"/>
+        <activity android:name=".Employee.EmployeeSignup" android:theme="@style/AppTheme.Dark"/>
+
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@ package com.dipakkr.github.clashhackproject.Employee;
  */
 
 public class Employee {
+
     public String empname;
     public String age;
     public String gender;

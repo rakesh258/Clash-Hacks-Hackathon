@@ -64,6 +64,7 @@ public class EmployerRegistration extends AppCompatActivity {
         }
 
         dialog.setMessage("Registering");
+        dialog.show();
 
         mAuth.createUserWithEmailAndPassword(email,pass)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
