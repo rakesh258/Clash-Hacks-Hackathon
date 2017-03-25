@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dipakkr.github.clashhackproject.R;
@@ -27,6 +28,7 @@ public class EmployerRegistration extends AppCompatActivity {
 
     EditText mEmail, mPass;
     Button mRegister;
+    TextView mTxtLogin;
 
     private FirebaseAuth mAuth;
     ProgressDialog dialog;
@@ -41,6 +43,7 @@ public class EmployerRegistration extends AppCompatActivity {
         mEmail = (EditText)findViewById(R.id.emp_email);
         mPass = (EditText)findViewById(R.id.emp_pass);
         mRegister = (Button)findViewById(R.id.bt_register);
+        mTxtLogin = (TextView)findViewById(R.id.txt_login);
 
         dialog = new ProgressDialog(this);
 
@@ -48,6 +51,12 @@ public class EmployerRegistration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 createUser();
+            }
+        });
+        mTxtLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),EmployerLogin.class));
             }
         });
     }
