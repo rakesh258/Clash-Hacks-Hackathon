@@ -24,11 +24,10 @@
         <activity android:name=".Employee.EmployeePreUpdateProfile"/>
         <activity android:name=".employer.EmployerPreProfileUpdate"/>
 
-        <activity android:name=".Employee.EmployeeLogin" android:theme="@style/AppTheme.Dark"/>
-        <activity android:name=".Employee.EmployeeSignup" android:theme="@style/AppTheme.Dark"/>
+        <activity android:name=".Employee.EmployeeLogin"
+            android:theme="@style/AppTheme.Dark"/>
 
         <activity android:name=".employer.EmployerLogin"/>
-
 
     </application>
 

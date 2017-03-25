@@ -8,12 +8,9 @@ import android.view.View;
 import android.widget.Button;
 
 
+import com.dipakkr.github.clashhackproject.Employee.EmployeeLogin;
 import com.dipakkr.github.clashhackproject.Employee.EmployeeRegistration;
 import com.dipakkr.github.clashhackproject.employer.EmployerRegistration;
-
-
-import com.dipakkr.github.clashhackproject.Employee.EmployeeLogin;
-import com.dipakkr.github.clashhackproject.Employee.EmployeeSignup;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -38,14 +35,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (id){
             case R.id.bt_employee :
-                startActivity(new Intent(getApplicationContext(), EmployeeRegistration.class));
+                startActivity(new Intent(getApplicationContext(), EmployeeLogin.class));
                 break;
 
             case R.id.bt_employer :
                 startActivity(new Intent(getApplicationContext(), EmployerRegistration.class));
 
         }
-
     }
 
     @Override
