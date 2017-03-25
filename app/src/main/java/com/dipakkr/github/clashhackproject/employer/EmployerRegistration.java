@@ -28,7 +28,6 @@ public class EmployerRegistration extends AppCompatActivity {
     EditText mEmail, mPass;
     Button mRegister;
 
-    private FirebaseUser mUser;
     private FirebaseAuth mAuth;
     ProgressDialog dialog;
 
@@ -70,10 +69,12 @@ public class EmployerRegistration extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                        if(task.isSuccessful()) {
                             dialog.dismiss();
                             finish();
-                            startActivity(new Intent(getApplicationContext(),EmployerPreProfileUpdate.class));
+                            startActivity(new Intent(getApplicationContext(), EmployerPreProfileUpdate.class));
+                        }else{
+                            Toast.makeText(EmployerRegistration.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
