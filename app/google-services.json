@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "708093275971",
+    "firebase_url": "https://clashhackproject.firebaseio.com",
+    "project_id": "clashhackproject",
+    "storage_bucket": "clashhackproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708093275971:android:0bb607ad4831337c",
+        "android_client_info": {
+          "package_name": "com.dipakkr.github.clashhackproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708093275971-a586d2dlfu96j3mt2lq02gjqv1ikrpoq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dipakkr.github.clashhackproject",
+            "certificate_hash": "1de4e28ed542f5250d8edecc486a6ba573aa141f"
+          }
+        },
+        {
+          "client_id": "708093275971-2ae1npiv14ot5hbs24lafuutuj0gnvoj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBab0uhd8SbHmrpjypnLmOZRslxYKtkJ38"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708093275971-2ae1npiv14ot5hbs24lafuutuj0gnvoj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
