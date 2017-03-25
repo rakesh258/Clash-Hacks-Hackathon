@@ -59,12 +59,15 @@ public class EmployeeRegistration extends AppCompatActivity {
 
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this, "Enter Email", Toast.LENGTH_SHORT).show();
+            return;
         }
         if(TextUtils.isEmpty(pass)){
             Toast.makeText(this, "Enter Pass", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         dialog.setMessage("Registering..");
+        dialog.show();
 
         mAuth.createUserWithEmailAndPassword(email,pass)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -74,6 +77,9 @@ public class EmployeeRegistration extends AppCompatActivity {
                             dialog.dismiss();
                             finish();
                             startActivity(new Intent(getApplicationContext(),EmployerPreProfileUpdate.class));
+                        }else {
+                            dialog.dismiss();
+                            Toast.makeText(EmployeeRegistration.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
