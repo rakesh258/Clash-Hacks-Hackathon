@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Employee.EmployeeRegistration"/>
+        <activity android:name=".employer.EmployerPreProfileUpdate"/>
+        <activity android:name=".employer.EmployerRegistration"/>
     </application>
 
 </manifest>
