@@ -1,4 +1,4 @@
-package com.dipakkr.github.clashhackproject.Employee;
+package com.dipakkr.github.clashhackproject.employer;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.dipakkr.github.clashhackproject.R;
-import com.dipakkr.github.clashhackproject.employer.EmployerPreProfileUpdate;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -24,7 +23,8 @@ import com.google.firebase.auth.FirebaseUser;
  * Created by deepak on 25-03-2017.
  */
 
-public class EmployeeRegistration extends AppCompatActivity {
+public class EmployerRegistration extends AppCompatActivity {
+
     EditText mEmail, mPass;
     Button mRegister;
 

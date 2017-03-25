@@ -22,20 +22,19 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Admin"
+        android:text="Employee"
         android:id="@+id/bt_admin"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/bt_user"
-        android:layout_alignStart="@+id/bt_user"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="98dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User"
-        android:id="@+id/bt_user"
-        android:layout_below="@+id/bt_admin"
+        android:text="Employer"
+        android:id="@+id/bt_employer"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="161dp" />
+        android:layout_marginBottom="156dp" />
 
 </RelativeLayout>
