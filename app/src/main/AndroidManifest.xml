@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dipakkr.github.clashhackproject">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,10 +19,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".Employee.EmployeeRegistration"/>
-        <activity android:name=".employer.EmployerPreProfileUpdate"/>
         <activity android:name=".employer.EmployerRegistration"/>
-        <activity android:name=".employer.EmployerLogin"/>
+
         <activity android:name=".Employee.EmployeePreUpdateProfile"/>
+        <activity android:name=".employer.EmployerPreProfileUpdate"/>
+
+        <activity android:name=".Employee.EmployeeLogin" android:theme="@style/AppTheme.Dark"/>
+        <activity android:name=".Employee.EmployeeSignup" android:theme="@style/AppTheme.Dark"/>
+
+        <activity android:name=".employer.EmployerLogin"/>
+
+
     </application>
 
 </manifest>
