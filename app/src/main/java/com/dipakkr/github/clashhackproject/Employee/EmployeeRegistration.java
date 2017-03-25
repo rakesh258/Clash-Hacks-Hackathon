@@ -64,7 +64,7 @@ public class EmployeeRegistration extends AppCompatActivity {
             Toast.makeText(this, "Enter Pass", Toast.LENGTH_SHORT).show();
         }
 
-        dialog.setMessage("Registering");
+        dialog.setMessage("Registering..");
 
         mAuth.createUserWithEmailAndPassword(email,pass)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {

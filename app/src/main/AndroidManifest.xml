@@ -27,6 +27,9 @@
         <activity android:name=".Employee.EmployeeLogin" android:theme="@style/AppTheme.Dark"/>
         <activity android:name=".Employee.EmployeeSignup" android:theme="@style/AppTheme.Dark"/>
 
+        <activity android:name=".employer.EmployerLogin"/>
+
+
     </application>
 
 </manifest>
