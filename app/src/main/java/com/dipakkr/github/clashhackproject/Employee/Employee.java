@@ -7,6 +7,7 @@ package com.dipakkr.github.clashhackproject.Employee;
 public class Employee {
 
     public String empname;
+    public String aadhaar;
     public String age;
     public String gender;
     public String mobile;
@@ -19,9 +20,10 @@ public class Employee {
 
     public Employee(){
     }
-    public Employee(String empname, String age, String gender, String mobile,
+    public Employee(String empname,String aadhaar, String age, String gender, String mobile,
                     String city, String qualification, String skill, String skill_experience, String skill_auth,String empimage ){
         this.empname = empname;
+        this.aadhaar =aadhaar;
         this.age = age;
         this.gender = gender;
         this.mobile = mobile;
@@ -72,4 +74,9 @@ public class Employee {
     public String getSkill_auth() {
         return skill_auth;
     }
+
+    public String getAadhaar() {
+        return aadhaar;
+    }
 }
+

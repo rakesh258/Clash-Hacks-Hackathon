@@ -28,7 +28,7 @@
 
         <activity android:name=".employer.EmployerLogin"/>
 
-        <activity android:name=".Employee.EmployeeProfile"/>
+        <activity android:name=".Employee.EmployeeProfile" />
 
     </application>
 
