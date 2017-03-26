@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 /**
- * Created by admin on 26-03-2017.
+ * Created by sagar on 26-03-2017.
  */
 public class SplashScreen extends AppCompatActivity {
     @Override

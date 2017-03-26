@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.dipakkr.github.clashhackproject.R;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -95,7 +94,7 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
         Employee employee = new Employee(e_name,e_aadhaar,e_age, e_gender, e_mobile, e_city,"12th", e_skill,
                 "2year", "aadhar card", emp_img_url);
         mRef.child(e_aadhaar).setValue(employee);
-        Toast.makeText(getApplicationContext(), "Database Updated", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(), EmployeeProfile.class));
     }
 
    @Override

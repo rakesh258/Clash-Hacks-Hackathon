@@ -5,18 +5,26 @@
     android:layout_margin="30dp"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:gravity="center"
+        android:text="Employer Login Portal"
+        android:textSize="24sp" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
-        android:textSize="25dp"
+        android:textSize="22sp"
         android:id="@+id/emp_email"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:textSize="25dp"
+        android:textSize="22sp"
         android:id="@+id/emp_pass"
         android:layout_marginTop="40dp"
         android:inputType="textPassword"/>

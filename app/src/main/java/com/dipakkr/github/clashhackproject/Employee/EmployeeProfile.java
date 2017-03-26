@@ -18,6 +18,8 @@ import com.dipakkr.github.clashhackproject.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import static com.dipakkr.github.clashhackproject.R.id.logout;
+
 /**
  * Created by deepak on 26-03-2017.
  */
@@ -47,6 +49,8 @@ public class EmployeeProfile extends AppCompatActivity {
         tabLayout = (TabLayout)findViewById(R.id.tabs);
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
+
+
     }
 
     @Override
@@ -57,7 +61,19 @@ public class EmployeeProfile extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case logout:
+                firebaseAuth.signOut();
+                Toast.makeText(getApplicationContext(), "You have successfully logged out :)", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), EmployeeLogin.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
 
+    }
 
     @Override
     public void onBackPressed() {
@@ -79,5 +95,6 @@ public class EmployeeProfile extends AppCompatActivity {
             },2000);
         }
     }
+
 
 }
