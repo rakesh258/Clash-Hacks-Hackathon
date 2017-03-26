@@ -23,8 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:gravity="center"
-            android:text="Employee Login Portal"
-            android:textSize="20sp" />
+            android:text="Visitor's Login"
+            android:textSize="28sp" />
 
         <!-- Email/aadhar Id Label -->
         <android.support.design.widget.TextInputLayout
@@ -65,6 +65,8 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:padding="12dp"
+            android:textSize="25sp"
+            android:textAlignment="center"
             android:text="Login"/>
 
         <TextView
@@ -74,7 +76,7 @@
             android:layout_marginBottom="24dp"
             android:gravity="center"
             android:text="No account yet? Create one"
-            android:textSize="16dip" />
+            android:textSize="22sp" />
 
     </LinearLayout>
 </ScrollView>
