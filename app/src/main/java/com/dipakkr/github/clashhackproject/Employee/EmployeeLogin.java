@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,14 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dipakkr.github.clashhackproject.R;
-import com.dipakkr.github.clashhackproject.employer.EmployerRegistration;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 /**
- * Created by admin on 25-03-2017.
+ * Created by sagar on 25-03-2017.
  */
 
 public class EmployeeLogin extends AppCompatActivity {
