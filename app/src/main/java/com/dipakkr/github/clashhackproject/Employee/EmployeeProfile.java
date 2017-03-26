@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.dipakkr.github.clashhackproject.Employee.adapter.ViewPagerAdapter;
 import com.dipakkr.github.clashhackproject.R;
+import com.dipakkr.github.clashhackproject.employer.EmployerRegistration;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -44,15 +45,16 @@ public class EmployeeProfile extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         mUser = firebaseAuth.getCurrentUser();
 
+        if(mUser == null){
+            startActivity(new Intent(this, EmployerRegistration.class));
+        }
+
         viewPager = (ViewPager)findViewById(R.id.view_pager);
         viewPagerAdapter = new ViewPagerAdapter(getApplicationContext(),getSupportFragmentManager());
         tabLayout = (TabLayout)findViewById(R.id.tabs);
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
-
-
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -66,15 +68,14 @@ public class EmployeeProfile extends AppCompatActivity {
         switch(item.getItemId()) {
             case logout:
                 firebaseAuth.signOut();
+                finish();
                 Toast.makeText(getApplicationContext(), "You have successfully logged out :)", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), EmployeeLogin.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
-
     }
-
     @Override
     public void onBackPressed() {
         if(backPressedOnce ){

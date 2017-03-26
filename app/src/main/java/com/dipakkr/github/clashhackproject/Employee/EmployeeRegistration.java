@@ -84,5 +84,13 @@ public class EmployeeRegistration extends AppCompatActivity {
                         });
             }
         });
+
+        mLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                startActivity(new Intent(getApplicationContext(),EmployeeLogin.class));
+            }
+        });
     }
 }

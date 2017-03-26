@@ -91,6 +91,7 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
         String e_mobile = emp_mobile.getText().toString();
         String e_skill = emp_skill.getText().toString();
 
+
         Employee employee = new Employee(e_name,e_aadhaar,e_age, e_gender, e_mobile, e_city,"12th", e_skill,
                 "2year", "aadhar card", emp_img_url);
         mRef.child(e_aadhaar).setValue(employee);
