@@ -1,6 +1,5 @@
 package com.dipakkr.github.clashhackproject.Employee.adapter;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,6 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.dipakkr.github.clashhackproject.Employee.fragment.JobSearch;
 import com.dipakkr.github.clashhackproject.Employee.fragment.JobSuggestions;
+import com.dipakkr.github.clashhackproject.Employee.fragment.UserProfile;
 import com.dipakkr.github.clashhackproject.R;
 
 /**
@@ -31,6 +31,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         else if (position == 1 ){
             return mContext.getResources().getString(R.string.frag_job_suggestion);
         }
+        else if (position == 2){
+            return mContext.getResources().getString(R.string.frag_emp_profile);
+        }
         return super.getPageTitle(position);
     }
 
@@ -40,13 +43,16 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         if(position == 0){
             return new JobSearch();
         }
-        else
+        else if (position == 1)
             return new JobSuggestions();
+
+        else
+            return new UserProfile();
     }
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 
 
