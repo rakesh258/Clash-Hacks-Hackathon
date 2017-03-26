@@ -85,7 +85,7 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
 
     private void saveProfile() {
         String e_name = emp_name.getText().toString();
-        String e_aadhaar = emp_aadhaar.getText().toString()
+        String e_aadhaar = emp_aadhaar.getText().toString();
         String e_age = emp_age.getText().toString();
         String e_city = emp_age.getText().toString();
         String e_gender = "male";
@@ -121,8 +121,6 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
                     }
                 });
             }
-
-
     }
 
 
