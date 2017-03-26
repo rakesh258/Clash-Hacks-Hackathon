@@ -80,12 +80,12 @@ public class EmployerRegistration extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
-                            dialog.dismiss();
                             finish();
                             startActivity(new Intent(getApplicationContext(), EmployerPreProfileUpdate.class));
                         }else{
                             Toast.makeText(EmployerRegistration.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                         }
+                        dialog.dismiss();
                     }
                 });
     }

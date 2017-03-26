@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dipakkr.github.clashhackproject.R;
+import com.dipakkr.github.clashhackproject.employer.model.Employer;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -72,11 +73,14 @@ public class EmployerLogin extends AppCompatActivity{
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            //TODO Task is succesfull, Open Employer Profile
+                            Toast.makeText(EmployerLogin.this, "Registration Succesfull", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), EmployerPreProfileUpdate.class));
+
                         }
                         else{
                             Toast.makeText(EmployerLogin.this, "Login Failed..", Toast.LENGTH_SHORT).show();
                         }
+                        dialog.dismiss();
                     }
                 });
     }

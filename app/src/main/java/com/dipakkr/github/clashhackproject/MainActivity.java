@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.dipakkr.github.clashhackproject.Employee.EmployeeLogin;
+import com.dipakkr.github.clashhackproject.Employee.EmployeeRegistration;
 import com.dipakkr.github.clashhackproject.employer.EmployerRegistration;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -19,10 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         bt_employee = (Button)findViewById(R.id.bt_employee);
         bt_empoloyer = (Button)findViewById(R.id.bt_employer);
-
 
         bt_employee.setOnClickListener(this);
         bt_empoloyer.setOnClickListener(this);
@@ -34,30 +33,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (id){
             case R.id.bt_employee :
-                startActivity(new Intent(getApplicationContext(), EmployeeLogin.class));
+                startActivity(new Intent(getApplicationContext(), EmployeeRegistration.class));
                 break;
 
             case R.id.bt_employer :
                 startActivity(new Intent(getApplicationContext(), EmployerRegistration.class));
-
+                break;
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.about:
-                // do what you want here
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 }

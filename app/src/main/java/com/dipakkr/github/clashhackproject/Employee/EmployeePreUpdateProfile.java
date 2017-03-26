@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.dipakkr.github.clashhackproject.R;
@@ -90,11 +91,10 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
         Employee employee = new Employee(e_name,e_age, e_gender, e_mobile, e_city,"12th", e_skill,
                 "2year", "aadhar card", emp_img_url);
         mRef.push().setValue(employee);
-
-
+        Toast.makeText(getApplicationContext(), "Database Updated", Toast.LENGTH_SHORT).show();
     }
 
-    @Override
+   /* @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -109,6 +109,7 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                        assert downloadUrl != null;
                         emp_img_url = downloadUrl.toString();
                         Glide.with(emp_image.getContext())
                                 .load(emp_img_url)
@@ -118,7 +119,7 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
             }
 
 
-    }
+    }*/
 
 
 }

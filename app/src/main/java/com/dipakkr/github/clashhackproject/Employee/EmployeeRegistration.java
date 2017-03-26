@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dipakkr.github.clashhackproject.R;
@@ -20,6 +21,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.w3c.dom.Text;
+
 /**
  * Created by deepak on 25-03-2017.
  */
@@ -27,6 +30,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class EmployeeRegistration extends AppCompatActivity {
     EditText mEmail, mPass;
     Button mRegister;
+    TextView mLogin;
 
     private FirebaseUser mUser;
     private FirebaseAuth mAuth;
@@ -40,54 +44,45 @@ public class EmployeeRegistration extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-        if(mUser != null){
-            finish();
-            startActivity(new Intent(getApplicationContext(),EmployeeProfile.class));
-        }
-
-        mEmail = (EditText)findViewById(R.id.emp_email);
-        mPass = (EditText)findViewById(R.id.emp_pass);
-        mRegister = (Button)findViewById(R.id.bt_register);
+        mEmail = (EditText) findViewById(R.id.emp_email);
+        mPass = (EditText) findViewById(R.id.emp_pass);
+        mRegister = (Button) findViewById(R.id.bt_register);
+        mLogin = (TextView)findViewById(R.id.txt_login);
 
         dialog = new ProgressDialog(this);
 
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                createUser();
+                String email = mEmail.getText().toString();
+                String pass = mPass.getText().toString();
+
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(getApplicationContext(), "Enter Email", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(pass)) {
+                    Toast.makeText(getApplicationContext(), "Enter Pass", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                dialog.setMessage("Registering..");
+                dialog.show();
+
+                mAuth.createUserWithEmailAndPassword(email, pass)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    dialog.dismiss();
+                                    startActivity(new Intent(getApplicationContext(), EmployeePreUpdateProfile.class));
+                                } else {
+                                    dialog.dismiss();
+                                    Toast.makeText(EmployeeRegistration.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
             }
         });
-    }
-    private void createUser(){
-
-        String email = mEmail.getText().toString();
-        String pass = mPass.getText().toString();
-
-        if(TextUtils.isEmpty(email)){
-            Toast.makeText(this, "Enter Email", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if(TextUtils.isEmpty(pass)){
-            Toast.makeText(this, "Enter Pass", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        dialog.setMessage("Registering..");
-        dialog.show();
-
-        mAuth.createUserWithEmailAndPassword(email,pass)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            dialog.dismiss();
-                            finish();
-                            startActivity(new Intent(getApplicationContext(),EmployerPreProfileUpdate.class));
-                        }else {
-                            dialog.dismiss();
-                            Toast.makeText(EmployeeRegistration.this, "Registration Failed", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
     }
 }
