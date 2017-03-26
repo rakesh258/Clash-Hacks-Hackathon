@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">"ClashHack Project "</string>
     <string name="update_employer">Update Your Profile</string>
+
+    <string name="frag_job_search">Job Search</string>
+    <string name="frag_job_suggestion">Job Suggestion</string>
 </resources>

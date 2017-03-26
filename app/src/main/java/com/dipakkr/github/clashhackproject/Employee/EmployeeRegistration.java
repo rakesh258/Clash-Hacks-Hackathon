@@ -38,6 +38,12 @@ public class EmployeeRegistration extends AppCompatActivity {
         setContentView(R.layout.activity_employee_reg);
 
         mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
+
+        if(mUser != null){
+            finish();
+            startActivity(new Intent(getApplicationContext(),EmployeeProfile.class));
+        }
 
         mEmail = (EditText)findViewById(R.id.emp_email);
         mPass = (EditText)findViewById(R.id.emp_pass);

@@ -78,10 +78,10 @@ public class EmployeeLogin extends AppCompatActivity {
                         if(task.isSuccessful()){
                             //Now open
                             dialog.dismiss();
-                            finish();
-                            Toast.makeText(EmployeeLogin.this, "Login Sucess", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),EmployeeProfile.class));
                         }
                         else {
+                            dialog.dismiss();
                             Toast.makeText(EmployeeLogin.this, "Login Failed", Toast.LENGTH_SHORT).show();
                         }
                     }
