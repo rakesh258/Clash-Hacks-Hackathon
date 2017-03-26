@@ -18,6 +18,15 @@
             android:layout_height="72dp"
             android:layout_marginBottom="24dp"
             android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:text="Sign-Up portal"
+            android:textSize="28sp" />
+
         <!-- Email/ aadhar Id Label -->
 
         <android.support.design.widget.TextInputLayout
@@ -54,6 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
+            android:textSize="25sp"
             android:padding="12dp"
             android:text="Create Account"/>
 
@@ -63,7 +73,7 @@
             android:layout_marginBottom="24dp"
             android:text="Already a member? Login"
             android:gravity="center"
-            android:textSize="16dip"/>
+            android:textSize="22sp"/>
 
     </LinearLayout>
 </ScrollView>
