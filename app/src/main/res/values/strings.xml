@@ -4,5 +4,9 @@
 
     <string name="frag_job_search">Job Search</string>
     <string name="frag_job_suggestion">Job Suggestion</string>
+
     <string name="frag_setting">Profile Setting</string>
+
+    <string name="frag_emp_profile">Profile</string>
+
 </resources>
