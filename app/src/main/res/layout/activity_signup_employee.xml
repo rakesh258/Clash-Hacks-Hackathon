@@ -18,6 +18,15 @@
             android:layout_height="72dp"
             android:layout_marginBottom="24dp"
             android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:text="Sign-Up portal"
+            android:textSize="28sp" />
+
         <!-- Email/ aadhar Id Label -->
 
         <android.support.design.widget.TextInputLayout
@@ -25,11 +34,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/emailAadhar"
+            <EditText android:id="@+id/emp_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:hint="Email/Aadhar Card id" />
+                android:hint="Email/Phone Number" />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Password Label -->
@@ -39,7 +48,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
 
-            <EditText android:id="@+id/input_password"
+            <EditText android:id="@+id/emp_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -49,21 +58,23 @@
 
         <!-- Signup Button -->
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_signup"
+            android:id="@+id/bt_register"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
+            android:textSize="25sp"
             android:padding="12dp"
+            android:textAlignment="center"
             android:text="Create Account"/>
 
-        <TextView android:id="@+id/link_login"
+        <TextView android:id="@+id/txt_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:text="Already a member? Login"
             android:gravity="center"
-            android:textSize="16dip"/>
+            android:textSize="22sp"/>
 
     </LinearLayout>
 </ScrollView>
