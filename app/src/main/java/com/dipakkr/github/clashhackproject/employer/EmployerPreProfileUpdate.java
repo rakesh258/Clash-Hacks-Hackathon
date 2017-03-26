@@ -1,5 +1,6 @@
 package com.dipakkr.github.clashhackproject.employer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -56,7 +57,6 @@ public class EmployerPreProfileUpdate extends AppCompatActivity {
         });
     }
     private void updateProfile(){
-        //TODO add update profile code after making model
         String employer_name = et_name.getText().toString();
         String employer_intro = et_intro.getText().toString();
         String employer_city = et_city.getText().toString();
@@ -68,6 +68,6 @@ public class EmployerPreProfileUpdate extends AppCompatActivity {
         mRef.push().setValue(employer);
 
         Toast.makeText(getApplicationContext(),"Database Updated", Toast.LENGTH_SHORT).show();
-
+        startActivity(new Intent(getApplicationContext(),EmployerPreProfileUpdate.class));
     }
 }
