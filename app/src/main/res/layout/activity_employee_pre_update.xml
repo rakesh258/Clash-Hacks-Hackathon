@@ -29,7 +29,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/employee_image"
-                android:background="@drawable/ic_account_circle_black_24dp"/>
+                android:src="@drawable/ic_account_circle_black_24dp"/>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"

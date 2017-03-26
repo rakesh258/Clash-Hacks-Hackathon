@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.dipakkr.github.clashhackproject.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by deepak on 25-03-2017.
@@ -68,6 +68,7 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
                 Intent i = new Intent(Intent.ACTION_GET_CONTENT);
                 i.setType("image/jpeg");
                 i.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+                emp_image.setImageResource(0);
                 startActivityForResult(Intent.createChooser(i, "Complete action using"), RC_PHOTO_PICKER);
             }
         });
@@ -112,9 +113,7 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
                         Uri downloadUrl = taskSnapshot.getDownloadUrl();
                         if (downloadUrl!= null){
                             emp_img_url = downloadUrl.toString();
-                            Glide.with(emp_image.getContext())
-                                    .load(emp_img_url)
-                                    .into(emp_image);
+                            Picasso.with(emp_image.getContext()).load(emp_img_url).placeholder(R.drawable.progressbar).into(emp_image);
                         }
 
                     }
