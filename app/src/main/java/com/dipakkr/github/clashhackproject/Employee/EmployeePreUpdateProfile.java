@@ -48,7 +48,7 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
 
         mdatabase = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
-        mRef = mdatabase.getReference().child("employer");
+        mRef = mdatabase.getReference().child("employee");
         mstorage = FirebaseStorage.getInstance();
         emp_image_reference = mstorage.getReference().child("user_image");
 
@@ -59,6 +59,7 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
         emp_skill = (EditText) findViewById(R.id.employee_skill);
         emp_save = (Button) findViewById(R.id.bt_save);
         emp_gender = (Spinner) findViewById(R.id.spinnner_gender);
+        emp_image = (ImageView) findViewById(R.id.employee_image);
 
         //image picker to select user image
         emp_image.setOnClickListener(new View.OnClickListener() {
@@ -94,7 +95,7 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
         Toast.makeText(getApplicationContext(), "Database Updated", Toast.LENGTH_SHORT).show();
     }
 
-   /* @Override
+   @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -109,17 +110,19 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                        assert downloadUrl != null;
-                        emp_img_url = downloadUrl.toString();
-                        Glide.with(emp_image.getContext())
-                                .load(emp_img_url)
-                                .into(emp_image);
+                        if (downloadUrl!= null){
+                            emp_img_url = downloadUrl.toString();
+                            Glide.with(emp_image.getContext())
+                                    .load(emp_img_url)
+                                    .into(emp_image);
+                        }
+
                     }
                 });
             }
 
 
-    }*/
+    }
 
 
 }
