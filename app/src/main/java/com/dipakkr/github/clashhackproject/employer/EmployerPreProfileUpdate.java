@@ -39,7 +39,6 @@ public class EmployerPreProfileUpdate extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-
         mRef = mdatabase.getReference().child("employer");
 
         et_name = (EditText)findViewById(R.id.employer_name);
@@ -68,6 +67,6 @@ public class EmployerPreProfileUpdate extends AppCompatActivity {
         mRef.push().setValue(employer);
 
         Toast.makeText(getApplicationContext(),"Database Updated", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(getApplicationContext(),EmployerPreProfileUpdate.class));
+        startActivity(new Intent(getApplicationContext(),EmployerProfile.class));
     }
 }

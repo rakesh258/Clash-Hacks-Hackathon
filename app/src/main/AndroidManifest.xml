@@ -39,6 +39,9 @@
 
         <activity android:name=".Employee.EmployeeProfile" />
 
+        <activity android:name=".employer.EmployerProfile"/>
+        <activity android:name=".employer.EmployerProfileSetting"/>
+
     </application>
 
 </manifest>

@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/employer_name"
+        android:id="@+id/emp_res_name"
         android:text="Organization Name"
         android:textSize="20dp"
         android:textAlignment="center"/>
@@ -29,7 +29,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/employer_brief"
+        android:id="@+id/emp_res_brief"
         android:text="Intro"
         android:textSize="17sp"
         android:textAlignment="center"/>
@@ -37,7 +37,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/city"
+        android:id="@+id/emp_res_city"
         android:text="Location"
         android:textAlignment="center"
         android:textSize="17sp"/>
@@ -146,6 +146,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="update profile"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
             android:id="@+id/bt_employer_update"/>
         <Button
             android:layout_width="wrap_content"

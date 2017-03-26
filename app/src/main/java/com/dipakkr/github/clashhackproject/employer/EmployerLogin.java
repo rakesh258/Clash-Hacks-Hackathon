@@ -74,7 +74,7 @@ public class EmployerLogin extends AppCompatActivity{
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(EmployerLogin.this, "Registration Succesfull", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), EmployerPreProfileUpdate.class));
+                            startActivity(new Intent(getApplicationContext(), EmployerProfile.class));
 
                         }
                         else{

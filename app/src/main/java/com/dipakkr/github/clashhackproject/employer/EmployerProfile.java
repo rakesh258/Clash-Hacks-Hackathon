@@ -11,6 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.dipakkr.github.clashhackproject.Employee.adapter.ViewPagerAdapter;
@@ -28,6 +31,10 @@ public class EmployerProfile extends AppCompatActivity {
     private FirebaseUser mUser;
     private boolean backPressedOnce = false;
 
+    EditText et_search;
+    Button bt_search;
+    ListView listView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,14 +42,15 @@ public class EmployerProfile extends AppCompatActivity {
         Toolbar toolbar  =(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        et_search = (EditText)findViewById(R.id.et_search);
+        bt_search = (Button)findViewById(R.id.bt_search);
+
         firebaseAuth = FirebaseAuth.getInstance();
         mUser = firebaseAuth.getCurrentUser();
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_profile,menu);
         return true;
