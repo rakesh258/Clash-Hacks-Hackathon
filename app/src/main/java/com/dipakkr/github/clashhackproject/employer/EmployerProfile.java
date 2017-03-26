@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.dipakkr.github.clashhackproject.Employee.adapter.ViewPagerAdapter;
 import com.dipakkr.github.clashhackproject.R;
+import com.dipakkr.github.clashhackproject.employer.adapter.MyPagerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -31,9 +32,9 @@ public class EmployerProfile extends AppCompatActivity {
     private FirebaseUser mUser;
     private boolean backPressedOnce = false;
 
-    EditText et_search;
-    Button bt_search;
-    ListView listView;
+    ViewPager viewPager;
+    MyPagerAdapter adapter;
+    TabLayout tabLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,8 +43,11 @@ public class EmployerProfile extends AppCompatActivity {
         Toolbar toolbar  =(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        et_search = (EditText)findViewById(R.id.et_search);
-        bt_search = (Button)findViewById(R.id.bt_search);
+        viewPager = (ViewPager)findViewById(R.id.view_pager);
+        adapter = new MyPagerAdapter(this,getSupportFragmentManager());
+        tabLayout = (TabLayout)findViewById(R.id.tabs);
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
 
         firebaseAuth = FirebaseAuth.getInstance();
         mUser = firebaseAuth.getCurrentUser();
@@ -61,8 +65,10 @@ public class EmployerProfile extends AppCompatActivity {
 
         int id = item.getItemId();
 
-        if(id == R.id.setting){
-            startActivity(new Intent(getApplicationContext(),EmployerProfileSetting.class));
+        if(id == R.id.logout){
+            firebaseAuth.signOut();
+            finish();
+            startActivity(new Intent(getApplicationContext(),EmployerRegistration.class));
         }
         return super.onOptionsItemSelected(item);
     }
