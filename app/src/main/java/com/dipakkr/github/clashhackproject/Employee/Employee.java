@@ -15,11 +15,12 @@ public class Employee {
     public String skill;
     public String skill_experience;
     public String skill_auth;
+    public String empimage;
 
     public Employee(){
     }
     public Employee(String empname, String age, String gender, String mobile,
-                    String city, String qualification, String skill, String skill_experience, String skill_auth ){
+                    String city, String qualification, String skill, String skill_experience, String skill_auth,String empimage ){
         this.empname = empname;
         this.age = age;
         this.gender = gender;
@@ -29,6 +30,11 @@ public class Employee {
         this.skill = skill;
         this.skill_experience = skill_experience;
         this.skill_auth =skill_auth;
+        this.empimage = empimage;
+    }
+
+    public String getEmpimage() {
+        return empimage;
     }
 
     public String getEmpname() {
