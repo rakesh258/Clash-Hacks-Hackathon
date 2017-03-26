@@ -36,7 +36,7 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
     private static final int RC_PHOTO_PICKER = 1;
 
     ImageView emp_image;
-    EditText emp_name, emp_age, emp_city, emp_mobile, emp_skill;
+    EditText emp_name, emp_age, emp_city, emp_mobile, emp_skill,emp_aadhaar;
     Button emp_save;
     Spinner emp_gender;
     String emp_img_url;
@@ -58,6 +58,7 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
         emp_mobile = (EditText) findViewById(R.id.employee_mobile);
         emp_skill = (EditText) findViewById(R.id.employee_skill);
         emp_save = (Button) findViewById(R.id.bt_save);
+        emp_aadhaar = (EditText)findViewById(R.id.employee_aadhaar);
         emp_gender = (Spinner) findViewById(R.id.spinnner_gender);
         emp_image = (ImageView) findViewById(R.id.employee_image);
 
@@ -84,15 +85,16 @@ public class EmployeePreUpdateProfile extends AppCompatActivity{
 
     private void saveProfile() {
         String e_name = emp_name.getText().toString();
+        String e_aadhaar = emp_aadhaar.getText().toString()
         String e_age = emp_age.getText().toString();
         String e_city = emp_age.getText().toString();
         String e_gender = "male";
         String e_mobile = emp_mobile.getText().toString();
         String e_skill = emp_skill.getText().toString();
 
-        Employee employee = new Employee(e_name,e_age, e_gender, e_mobile, e_city,"12th", e_skill,
+        Employee employee = new Employee(e_name,e_aadhaar,e_age, e_gender, e_mobile, e_city,"12th", e_skill,
                 "2year", "aadhar card", emp_img_url);
-        mRef.push().setValue(employee);
+        mRef.child(e_aadhaar).setValue(employee);
         Toast.makeText(getApplicationContext(), "Database Updated", Toast.LENGTH_SHORT).show();
     }
 
